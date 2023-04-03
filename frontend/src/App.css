@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: #202124E8;
+}
+
+/* Makes the backdrop of sweetalert to be blurred */
+body.swal2-shown > [aria-hidden="true"] {
+  filter: blur(2px);
+}
+
+/* Animation for the blur of sweetalert */
+body > * {
+  transition: 0.15s filter linear;
+}
