@@ -20,7 +20,7 @@ const App = () => {
     dispatch(initialApp());
   }, [dispatch]);
 
-  // disconnect the scoket on refresh or closing tab
+  // disconnect the socket on refresh or closing tab
   window.onbeforeunload = () => {
     dispatch(leaveChat());
   };
