@@ -6,3 +6,4 @@
 - npm install
 - host mongod server (host mongodb server locally on port 27017)
 - npm run start
+
