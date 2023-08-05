@@ -18,12 +18,19 @@ const App = () => {
   useEffect(() => {
     history.replace({ to: "/" });
     dispatch(initialApp());
-  }, [dispatch]);
 
-  // disconnect the socket on refresh or closing tab
-  window.onbeforeunload = () => {
-    dispatch(leaveChat());
-  };
+
+    const handleWindowBeforeUnload = () => {
+      dispatch(leaveChat());
+
+    };
+
+    window.addEventListener('beforeunload', handleWindowBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleWindowBeforeUnload);
+    };
+  }, [dispatch]);
 
   return (
     <>
